@@ -22,7 +22,7 @@ class _InitialScreenState extends State<InitialScreen> {
       ),
       body: ListView(
           children: TaskInherited.of(context).TaskList, //precisa dessa função of(context) para poder acessar as infos do TaskList
-          padding: EdgeInsets.only(top: 8, bottom: 70),
+          padding: const EdgeInsets.only(top: 8, bottom: 70),
         ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {

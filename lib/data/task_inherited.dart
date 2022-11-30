@@ -7,6 +7,7 @@ class TaskInherited extends InheritedWidget {
     required Widget child,
   }) : super (key: key, child : child);
 
+  // ignore: non_constant_identifier_names
   final List<Task> TaskList = [
               Task(
                   'Aprender Flutter',

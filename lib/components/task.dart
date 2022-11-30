@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:nosso_primeiro_projeto/components/difficulty.dart';
 
+// ignore: must_be_immutable
 class Task extends StatefulWidget {
   final String nome;
   final String foto;
@@ -18,7 +19,7 @@ class _TaskState extends State<Task> {
   
 
 bool assetOrNetwork() {
-  if (widget.foto.contains("http")){     //verificar se a informação que ta snedo enviada é um http
+  if (widget.foto.contains("http")){     //verificar se a informação que ta sendo enviada é um http
     return false;
   }
   return true;
