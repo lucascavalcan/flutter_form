@@ -15,7 +15,8 @@ class _FormScreenState extends State<FormScreen> {
   TextEditingController difficultyController = TextEditingController();
   TextEditingController imageController = TextEditingController();
 
-  final _formKey = GlobalKey<FormState>();
+  final _formKey = GlobalKey<FormState>();   // vai ficar de olho no estado do formulário (para fazer a validação funcionar)
+  //recebe uma chave global do tipo estado de formulário, então ela vai ficar de olho no estado do nosso formulário. Tudo que está dentro do Form que seja um validador de formulário, ela vai estar de olho
   
   bool valueValidator(String? value) {   // para verificar se os valores inseridos no formulário são válidos
     if(value != null && value.isEmpty){
@@ -36,8 +37,8 @@ class _FormScreenState extends State<FormScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Form(
-      key: _formKey,
+    return Form(  // esse widget tem o poder de verificar as validações que ocorrem no TextFormField
+      key: _formKey,  // vai ficar de olho no estado do formulário
       child: Scaffold(
         appBar: AppBar(
           title: const Text('Nova Tarefa'),
