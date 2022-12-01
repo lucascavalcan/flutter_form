@@ -98,7 +98,7 @@ class _FormScreenState extends State<FormScreen> {
                   Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: TextFormField(
-                      onChanged: (text){
+                      onChanged: (text){  //  a informação do formulário mudou e o setState avisou para o StatefulWidget que foi alterado e ele “rebuildou” a tela, mostrando a imagem
                         setState(() {
 
                         });
@@ -132,8 +132,9 @@ class _FormScreenState extends State<FormScreen> {
                       borderRadius: BorderRadius.circular(10),
                       child: Image.network(
                         imageController.text,
-                        errorBuilder: (BuildContext context,Object exception,StackTrace? stackTrace){
-                          return Image.asset('assets/images/nophoto.png');
+                        errorBuilder: (BuildContext context,Object exception,StackTrace? stackTrace){ // função que constrói uma saída para caso a imagem seja inválida (erro na hora de carregar a imagem)
+                          //o context indica o local onde o erro está acontecendo
+                          return Image.asset('assets/images/nophoto.png'); //imagem mostrada caso o erro ocorra
                         },
                         fit: BoxFit.cover,
                       ),
